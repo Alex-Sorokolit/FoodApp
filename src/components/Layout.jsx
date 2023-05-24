@@ -1,23 +1,26 @@
 import { Suspense } from "react";
-import { Outlet, NavLink } from "react-router-dom";
-
+import { Outlet } from "react-router-dom";
+import { NavItem } from "./Layout.styled";
+import { AiFillShopping } from "react-icons/ai";
+import { RiShoppingCartFill } from "react-icons/ri";
 import css from "./Layout.module.css";
+
+const navItems = [
+  { href: "shops", text: "Shops", icon: AiFillShopping },
+  { href: "cart", text: "Cart", icon: RiShoppingCartFill },
+];
+
 export const Layout = () => {
   return (
-    <div className={css.container}>
+    <div>
       <div className={css.header}>
-        <nav>
-          <div className={css.menuWrapper}>
-            <NavLink className={css.link} activeClassName="active" to="/">
-              <img src={"/"} alt="logo"></img>
-            </NavLink>
-            <NavLink className={css.link} activeClassName="active" to="/shops">
-              Shops
-            </NavLink>
-            <NavLink className={css.link} activeClassName="active" to="/cart">
-              Cart
-            </NavLink>
-          </div>
+        <nav className={css.navigation}>
+          {navItems.map(({ href, text, icon: Icon }) => (
+            <NavItem to={href} key={href}>
+              <Icon size="20" />
+              {text}
+            </NavItem>
+          ))}
         </nav>
       </div>
       <Suspense fallback={<div>Loading page...</div>}>

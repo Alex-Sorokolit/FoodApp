@@ -5,21 +5,9 @@
   /* background-color: aquamarine; */
   padding: 5px;
 }
-.menuWrapper {
+
+.navigation {
   display: flex;
+  flex-direction: row;
   gap: 20px;
-}
-
-.link {
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: #000;
-  text-decoration: none;
-  background-color: cadetblue;
-}
-
-.link .active {
-  text-decoration: none;
-  color: white;
-  background-color: orangered;
 }
