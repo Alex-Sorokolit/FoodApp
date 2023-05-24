@@ -1,0 +1,25 @@
+.container {
+  border: 1px solid black;
+}
+.header {
+  /* background-color: aquamarine; */
+  padding: 5px;
+}
+.menuWrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #000;
+  text-decoration: none;
+  background-color: cadetblue;
+}
+
+.link .active {
+  text-decoration: none;
+  color: white;
+  background-color: orangered;
+}
