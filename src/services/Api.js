@@ -10,3 +10,11 @@ export async function getAllShops() {
     console.log(error);
   }
 }
+
+export async function register(credentials) {
+  try {
+    const response = await axios.post("/auth/register", credentials);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
